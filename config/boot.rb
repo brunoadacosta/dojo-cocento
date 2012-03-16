@@ -4,7 +4,7 @@ ENV["RACK_ENV"] = "development"
 Bundler.setup(:default, ENV["RACK_ENV"])
 Bundler.require
 
-Dir[File.expand_path("../../config/initializers/**/*.rb", __FILE__)].sort.each do |file|
+Dir[File.expand_path("../../config/initializers/**/*.rb", __FILE__)].each do |file|
   require file
 end
 
