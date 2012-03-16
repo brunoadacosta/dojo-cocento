@@ -4,4 +4,4 @@ MongoMapper.config = {
   :production => {"uri" => ENV["MONGOLAB_URI"]}
 }
 
-MongoMapper.connect(ENV["RACK_ENV"])
+MongoMapper.connect(Sinatra::Base.environment)
