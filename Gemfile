@@ -16,3 +16,7 @@ end
 group :test do 
   gem "rspec"
 end
+
+group :production do
+  gem "unicorn"
+end
