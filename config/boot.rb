@@ -8,7 +8,7 @@ Dir[File.expand_path("../../app/**/*.rb", __FILE__)].sort.each do |file|
   require file
 end
 
-Dir[File.expand_path("../../config/initializers/**/*.rb", __FILE__)].each do |file|
+Dir[File.expand_path("../../config/initializers/**/*.rb", __FILE__)].sort.each do |file|
   require file
 end
 
