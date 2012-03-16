@@ -1,3 +1,4 @@
+# encoding: UTF-8
 get "/contatos" do 
   @contatos = Contato.all
   @form = Form.new(Contato.new, :contato)
@@ -18,4 +19,14 @@ get "/contatos/:id" do
   halt 404 unless @contato
   
   erb :"contatos/show"
+end
+
+delete "/contatos/:id" do
+  @contato = Contato.find(params[:id])
+  halt 404 unless @contato
+  
+  if @contato.delete
+    session[:notice] = "Contato excluído com sucesso."
+    redirect to("/contatos")
+  end
 end

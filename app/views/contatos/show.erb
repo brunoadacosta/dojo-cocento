@@ -1,2 +1,6 @@
 <h1><%= @contato.nome %></h1>
 
+<form method="post" action="/contatos/<%= @contato.id.to_s %>">
+	<button type="submit">Excluir</button>
+	<input type="hidden" name="_method" value="delete">
+</form>
