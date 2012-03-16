@@ -1,0 +1,18 @@
+<h1>Contatos</h1>
+
+<p>
+	<% @contatos.each do |contato| %>
+		<p>
+		 <a href="/contatos/<%=contato.id.to_s%>"><%= contato.nome %></a>
+		</p>
+	<%end%>
+</p>
+<form action="/contatos" method="post">
+ <p>
+   <%= @form.label :nome %>
+   <%= @form.text :nome %>   
+ </p> 
+ <p>
+   <%= @form.submit :create %>
+ </p>
+</form>
